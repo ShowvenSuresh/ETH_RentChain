@@ -24,6 +24,7 @@ contract AgreementContract {
 
     mapping(uint256 => Agreement) public agreementnDetails;
     mapping(uint256 => Escrow) public detailsToEscrow;
+    mapping(address => uint256) public tenantToAgreementId;
 
     function createAgreement(
         address payable _tenant,
@@ -46,6 +47,7 @@ contract AgreementContract {
         Escrow es = new Escrow(_tenant, _landord);
         detailsToEscrow[agreementId] = es;
         agreementnDetails[agreementId] = a;
+        tenantToAgreementId[_tenant] = agreementId;
     }
 
     function getAgreement(uint256 agrmtId) public view returns (Agreement memory) {
@@ -135,5 +137,9 @@ contract AgreementContract {
     function EndDispute(uint256 _agrmtId) public {
         Escrow es = detailsToEscrow[_agrmtId];
         es.disputeResolved();
+    }
+
+    function getAgreementId(address tenant) public view returns (uint256) {
+        return tenantToAgreementId[tenant];
     }
 }
