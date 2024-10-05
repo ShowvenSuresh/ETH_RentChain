@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escrow Dashboard</title>
+    <link rel="stylesheet" href="/deposit/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <div class="header-content">
+                    <div>
+                        <h1 class="card-title">Escrow Dashboard</h1>
+                        <p class="subtitle">Manage deposits and penalties</p>
+                    </div>
+                    <div class="total-deposit">
+                        <p>Total Deposit</p>
+                        <p id="total-deposit" class="total-amount">1.50 ETH</p>
+                        <button id="addDepositBtn" class="btn"><i class="fas fa-plus"></i> Add Deposit</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card-content">
+                <div class="transaction-header">
+                    <span>Transaction History</span>
+                    <span>Amount (ETH)</span>
+                </div>
+                <div id="transaction-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span id="closeModal" class="close">&times;</span>
+            <h2>Add Deposit</h2>
+            <input type="number" id="depositAmount" placeholder="Amount in ETH" />
+            <button id="confirmDeposit" class="btn">Confirm</button>
+        </div>
+    </div>
+
+    <script src="/deposit/script.js"></script>
+</body>
+</html>

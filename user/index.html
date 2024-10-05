@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RentChain Malaysia - Professional Design</title>
+    <link rel="stylesheet" href="_static/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <h1 class="header-title">RentChain Malaysia</h1>
+            <div class="header-actions">
+                <button class="button" onclick="location.href='metamask/metamask.html'">Connect Web3 Wallet</button>
+                <script src="_static/metamask.ts"></script>
+                <i class="fas fa-bell icon"></i>
+                <!-- User Profile Button -->
+                <button class="icon-button" onclick="location.href='signup/signup.html'">
+                    <i class="fas fa-user-circle icon"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Tabs Section -->
+        <div class="tabs">
+            <button class="tab-button active" onclick="showTabContent('listings')">Listings</button>
+            <button class="tab-button" onclick="showTabContent('contracts')">Contracts</button>
+            <button class="tab-button" onclick="showTabContent('payments')">Payments</button>
+            <button class="tab-button" onclick="showTabContent('disputes')">Disputes</button>
+            <button class="tab-button" onclick="showTabContent('reports')">Reports</button>
+        </div>
+
+        <!-- Listings Section -->
+        <div id="listings" class="tab-content">
+            <div class="search-bar">
+                <input type="text" placeholder="Search properties" class="search-input">
+                <select class="filter-select" onchange="filterProperties()">
+                    <option value="all">All Types</option>
+                    <option value="Apartment">Apartment</option>
+                    <option value="House">House</option>
+                    <option value="Studio">Studio</option>
+                </select>
+                <button class="button search-button"><i class="fas fa-search"></i> Search</button>
+            </div>
+
+            <div class="property-listings">
+                <div class="property-card" data-type="Apartment">
+                    <img src="_static/images-modern-apartment.jpeg" alt="Modern Apartment" class="property-image" onclick="openModal(this)">  
+                    <h3 class="property-title">Modern Apartment</h3>
+                    <p class="property-price">RM 1500/month</p>
+                    <p class="property-type">Apartment</p>
+                    <button class="button view-details">View Details</button>
+                </div>
+                <div class="property-card" data-type="House">
+                    <img src="_static/images-suburban-house.jpeg" alt="Suburban House" class="property-image" onclick="openModal(this)">
+                    <h3 class="property-title">Suburban House</h3>
+                    <p class="property-price">RM 2500/month</p>
+                    <p class="property-type">House</p>
+                    <button class="button view-details">View Details</button>
+                </div>
+                <div class="property-card" data-type="Studio">
+                    <img src="_static/images-city-center-studio.jpeg" alt="City Center Studio" class="property-image" onclick="openModal(this)">
+                    <h3 class="property-title">City Center Studio</h3>
+                    <p class="property-price">RM 1000/month</p>
+                    <p class="property-type">Studio</p>
+                    <button class="button view-details">View Details</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contracts Section -->
+<div id="contracts" class="tab-content" style="display:none;">
+    <h2 class="section-title">Smart Contracts</h2>
+    <p>Manage rental agreements and view contract status here.</p>
+    <div class="contract-details">
+        <div class="contract-timeline">
+            <h3>Contract Timeline</h3>
+            <ul>
+                <li>Contract Signed: <span id="contract-signed-date">1st January 2024</span></li>
+                <li>Rent Due Date: <span id="rent-due-date">5th of each month</span></li>
+                <li>Lease End Date: <span id="lease-end-date">31st December 2024</span></li>
+            </ul>
+        </div>
+
+        <div class="contract-service">
+            <h3>Service Details</h3>
+            <p>Monthly Cleaning: Included</p>
+            <p>Maintenance Services: Available</p>
+        </div>
+
+        <div class="contract-document">
+            <h3>Contract Document Info</h3>
+            <p><a href="_static/sample_contract.pdf" target="_blank" class="button">View Contract Document</a></p>
+        </div>
+
+        <div class="contract-landlord-info">
+            <h3>Landlord Information</h3>
+            <p>Name: <span id="landlord-name">John Doe</span></p>
+            <p>Contact: <span id="landlord-contact">john.doe@example.com</span></p>
+        </div>
+
+        <div class="contract-tenant-info">
+            <h3>Tenant Information</h3>
+            <p>Name: <span id="tenant-name">Jane Smith</span></p>
+            <p>Contact: <span id="tenant-contact">jane.smith@example.com</span></p>
+        </div>
+
+        <div class="contract-document">
+            <h3>Add Agreement</h3>
+            <p><a href="./agreement/agreement.html" class="button">Add Contract Document</a></p>
+        </div>
+    </div>
+</div>
+
+<!-- Other Sections -->
+ 
+<div id="payments" class="tab-content" style="display:none;">
+    <h2 class="section-title">Payment Management</h2>
+    <p>View payment history and manage transactions.</p>
+    <p><a href="/deposit/deposit.html" class="button">Add Payment</a></p>
+    </div>
+        <div id="disputes" class="tab-content" style="display:none;">
+            <h2 class="section-title">Dispute Resolution</h2>
+            <p>Initiate and track dispute resolution processes.</p>
+            <div class="dispute-listings">
+                <div class="dispute-card" data-type="Dispute 1">
+                    <img src="_static/images-dispute1.jpg" alt="Dispute 1" class="dispute-image" onclick="openDisputeModal(this)">
+                    <h3 class="dispute-title">Dispute 1: Unpaid Rent</h3>
+                    <p class="dispute-description">Tenant failed to pay rent for 2 months.</p>
+                    <button class="button view-dispute">View Details</button>
+                </div>
+                <div class="dispute-card" data-type="Dispute 2">
+                    <img src="_static/images-dispute2.jpeg" alt="Dispute 2" class="dispute-image" onclick="openDisputeModal(this)">
+                    <h3 class="dispute-title">Dispute 2: Damaged Property</h3>
+                    <p class="dispute-description">Tenant damaged the property during move-out.</p>
+                    <button class="button view-dispute">View Details</button>
+                </div>
+                <div class="dispute-card" data-type="Dispute 3">
+                    <img src="_static/images-dispute3.jpeg" alt="Dispute 3" class="dispute-image" onclick="openDisputeModal(this)">
+                    <h3 class="dispute-title">Dispute 3: Lease Termination</h3>
+                    <p class="dispute-description">Tenant terminated the lease early without notice.</p>
+                    <button class="button view-dispute">View Details</button>
+                </div>
+            </div>
+            <!-- Navigation Link to New Dispute Form -->
+             <div class="form-card" data-type="Form">
+            <h3 class="form-title">Submit a New Dispute</h3>
+            <a href="disputes/disputes.html" class="button">Create New Dispute</a>
+        </div>
+    </div>  
+
+        <div id="reports" class="tab-content" style="display:none;">
+            <h2 class="section-title">Reports and Analytics</h2>
+            <p>Access financial summaries and rental analytics.</p>
+        </div>
+
+        <!-- Footer Section -->
+        <footer class="footer">
+            <p>© 2024 RentChain Malaysia. All rights reserved.</p>
+            <p>Secured by blockchain. Regular smart contract audits performed.</p>
+        </footer>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="fullImage">
+        <div id="caption"></div>
+    </div>
+
+     <!-- Chatbox with FAQ and chatbot style -->
+    <div id="chatbox" class="chatbox">
+        <div class="chatbox-header">
+            <h3>Chat with RentChain Bot</h3>
+            <span class="close-chat" onclick="closeChatbox()">&times;</span>
+        </div>
+        <div class="chatbox-content">
+            <div class="messages">
+                <div class="message bot-message">
+                    <i class="fas fa-robot bot-icon"></i>
+                    <span>Hello! How can I assist you today?</span>
+                </div>
+                <div class="message bot-message">
+                    <i class="fas fa-robot bot-icon"></i>
+                    <span>Here are some common questions:</span>
+                </div>
+                <!-- FAQ List inside the chatbox -->
+                <ul class="faq-list">
+                    <li onclick="showAnswer('faq1')">1. How can I connect my wallet?</li>
+                    <li onclick="showAnswer('faq2')">2. What types of properties are available?</li>
+                    <li onclick="showAnswer('faq3')">3. How do I resolve a dispute?</li>
+                    <li onclick="showAnswer('faq4')">4. Can I pay my rent through the platform?</li>
+                </ul>
+            </div>
+            <!-- FAQ Answers hidden by default -->
+            <div id="faq1" class="faq-answer" style="display:none;">Click on the "Connect Web3 Wallet" button at the top right corner. Ensure you have MetaMask or a similar wallet installed.</div>
+            <div id="faq2" class="faq-answer" style="display:none;">We offer Apartments, Houses, and Studios. Use the search filter to narrow down your options.</div>
+            <div id="faq3" class="faq-answer" style="display:none;">Go to the 'Disputes' tab and follow the instructions to initiate a dispute resolution process.</div>
+            <div id="faq4" class="faq-answer" style="display:none;">Yes, you can view and manage all your payments in the 'Payments' tab.</div>
+
+            <input type="text" id="userInput" placeholder="Type your message here..." onkeypress="handleUserInput(event)">
+        </div>
+    </div>
+    
+    <button class="chat-button" onclick="openChatbox()">
+        <i class="fas fa-comments"></i>
+    </button>
+
+    <!-- Link to JavaScript -->
+    <script src="_static/index.js"></script>
+</body>
+</html>

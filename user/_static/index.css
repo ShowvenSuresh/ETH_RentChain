@@ -1,0 +1,596 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #1f4037, #99f2c8);
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px 30px;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.header-title {
+    font-size: 2.4em;
+    font-weight: 800;
+    color: #1f1c2c;
+}
+
+.header-actions .button,
+.header-actions .icon {
+    margin-left: 20px;
+}
+
+.icon {
+    font-size: 1.5em;
+    color: #555;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.icon:hover {
+    color: #1f1c2c;
+}
+
+.button {
+    padding: 12px 30px;
+    background: linear-gradient(45deg, #009fff, #ec2f4b);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 500;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.icon-button .icon {
+    font-size: 24px;
+    color: #333; /* Adjust color as needed */
+}
+
+.icon-button:hover .icon {
+    color: #007bff; /* Optional hover effect */
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin: 25px 0;
+}
+
+.tab-button {
+    padding: 12px 25px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    border-radius: 50px;
+    margin: 0 10px;
+    font-size: 1em;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.tab-button:hover,
+.tab-button.active {
+    background: linear-gradient(45deg, #00dbde, #fc00ff);
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+}
+
+.tab-content {
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* Space between the elements */
+    margin-bottom: 30px;
+}
+
+.search-input {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    font-size: 1em;
+    font-family: 'Roboto', sans-serif;
+    background: rgba(255, 255, 255, 0.8);
+    transition: box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.search-input:focus {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.filter-select {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: linear-gradient(45deg, #009fff, #ec2f4b);
+    color: #fff;
+    font-size: 1em;
+    outline: none; 
+    font-family: 'Roboto', sans-serif;
+    transition: all 0.3s ease, color 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.filter-select:hover,
+.filter-select:focus {
+    color: #1f1c2c; /* Font color change on hover/focus */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Increase shadow */
+}
+
+/* Modified Search Button */
+.search-button {
+    padding: 12px 25px; /* Matching padding with search-input and filter-select */
+    margin: 0; /* Consistent margin */
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(45deg, #009fff, #ec2f4b);
+    cursor: pointer;
+    color: #fff;
+    font-size: 1em;
+    font-family: 'Roboto', sans-serif;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.search-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Property Listings */
+.property-listings {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.property-card {
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 20px;
+}
+
+.property-title {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #1f1c2c;
+}
+
+.property-price {
+    font-size: 1.2em;
+    color: #ec2f4b;
+    margin: 5px 0;
+}
+
+.property-type {
+    font-size: 1em;
+    font-weight: 400;
+    color: #555;
+}
+
+.property-card .button {
+    background: linear-gradient(45deg, #009fff, #ec2f4b);
+    font-size: 0.9em;
+    padding: 10px 20px;
+}
+
+.property-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.contract-details {
+    display: grid; /* Use CSS Grid for flexible layouts */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Automatically adjust columns */
+    gap: 20px; /* Space between the elements */
+    margin-top: 20px;
+}
+
+.contract-details > div {
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out; /* Smooth transformation effects */
+}
+
+.contract-details > div:hover {
+    transform: scale(1.05); /* Zoom in slightly on hover for effect */
+}
+
+.contract-timeline, .contract-service, .contract-document, .contract-landlord-info, .contract-tenant-info {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 10px; /* Slightly rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Softer shadow for modern feel */
+    background: #f9f9f9; /* Light background to separate sections */
+}
+
+.contract-details h3 {
+    margin-top: 0;
+    color: #333; /* Darker color for titles */
+    font-size: 1.2em;
+    text-align: center; /* Center the titles */
+}
+
+.contract-details ul {
+    padding-left: 20px;
+    list-style-type: square; /* Change the bullet style for visual variation */
+}
+
+.contract-details ul li {
+    margin-bottom: 8px; /* Add space between list items */
+}
+
+/* Responsive styling for different screen sizes */
+@media (max-width: 768px) {
+    .contract-details {
+        grid-template-columns: 1fr; /* Single column layout for smaller screens */
+    }
+}
+
+.contract-document {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: #f9f9f9;
+    display: flex; /* Use flexbox for centering */
+    flex-direction: column;
+    align-items: center; /* Horizontally center items */
+    justify-content: center; /* Vertically center items */
+}
+
+/* Dispute Listings */
+/* Container Styles */
+.dispute-listings {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Space between items */
+    margin: 20px 0; /* Space above and below the listings */
+}
+
+.dispute-card {
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 20px;
+    text-align: center;
+}
+
+.dispute-title {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #1f1c2c;
+    margin-top: 10px;
+}
+
+.dispute-description {
+    font-size: 1em;
+    color: #555;
+    margin: 10px 0;
+}
+
+.dispute-image {
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.dispute-card .button {
+    background: linear-gradient(45deg, #009fff, #ec2f4b);
+    font-size: 0.9em;
+    padding: 10px 20px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.dispute-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Form Card Styles */
+.form-card {
+    background: #f9f9f9;                          /* Background color */
+    border-radius: 10px;                          /* Rounded corners */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);    /* Box shadow */
+    padding: 20px;                                 /* Inner padding */
+    text-align: center;                            /* Center align text */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition effects */
+}
+
+.form-title {
+    font-size: 1.5em;                              /* Title font size */
+    font-weight: 600;                              /* Title weight */
+    color: #1f1c2c;                                /* Title color */
+    margin-top: 10px;                             /* Space above the title */
+}
+
+.form-card .button {
+    background: linear-gradient(45deg, #009fff, #ec2f4b); /* Gradient background */
+    font-size: 0.9em;                              /* Button font size */
+    padding: 10px 20px;                           /* Button padding */
+    color: #fff;                                   /* Button text color */
+    border: none;                                  /* No border */
+    border-radius: 5px;                           /* Rounded corners for button */
+    cursor: pointer;                               /* Pointer cursor on hover */
+    margin-top: 15px;                             /* Space above button */
+    transition: background 0.3s;                  /* Transition for background */
+}
+
+.form-card .button:hover {
+    background: linear-gradient(45deg, #ec2f4b, #009fff); /* Reverse gradient on hover */
+    transform: translateY(-2px);                   /* Lift effect on hover */
+}
+
+/* Optional: Add a hover effect for the form card */
+.form-card:hover {
+    transform: translateY(-5px);                    /* Slight lift effect on hover */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);    /* Enhanced shadow on hover */
+}
+
+img {
+    width: 100%; /* Makes the image responsive */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.9); /* Black background with opacity */
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%; /* Image width */
+    height: auto;
+    border-radius: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#caption {
+    margin: auto;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    padding: 10px 0;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 15px 0;
+    background: #1f1c2c;
+    color: #f1f1f1;
+    border-top: 1px solid #ccc;
+    margin-top: 30px;
+}
+
+.footer p {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+/* Chatbox Styling */
+.chatbox {
+    display: none;
+    position: fixed;
+    bottom: 80px; /* Adjusted for visibility above the button */
+    right: 20px;
+    width: 320px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    background-color: #f9f9f9;
+    z-index: 1000;
+    border-radius: 10px;
+}
+
+.chatbox-header {
+    background-color: #3b5998;
+    color: #fff;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.chatbox-content {
+    padding: 15px;
+}
+
+.chatbox .messages {
+    max-height: 250px;
+    overflow-y: auto;
+    padding: 10px 0;
+}
+
+.message {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.user-message {
+    justify-content: flex-end;
+}
+
+.bot-message {
+    justify-content: flex-start;
+}
+
+.user-message span,
+.bot-message span {
+    background-color: #007bff;
+    color: white;
+    border-radius: 12px;
+    padding: 10px 15px;
+    margin: 5px 10px;
+    max-width: 70%;
+}
+
+.user-message span {
+    background-color: #007bff;
+}
+
+.bot-message span {
+    background-color: #f1f1f1;
+    color: #333;
+}
+
+.bot-icon, .user-icon {
+    font-size: 24px;
+    margin: 0 10px;
+}
+
+.faq-list {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.faq-list li {
+    padding: 8px 5px;
+    cursor: pointer;
+    color: #3b5998;
+}
+
+.faq-list li:hover {
+    text-decoration: underline;
+}
+
+.faq-answer {
+    background: #eef2f5;
+    border-left: 3px solid #3b5998;
+    margin: 5px 0;
+    padding: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Updated Chat Button Styling */
+.chat-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;         /* Circular width */
+    height: 60px;        /* Circular height */
+    background-color: #3b5998;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;  /* Makes it circular */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chat-button i {
+    font-size: 24px;     /* Icon size */
+}
+
+/* styles.css */
+@import url('https://cdn.tailwindcss.com');
+
+.wallet-button {
+    width: 100%;
+    background-color: #2563eb; /* Tailwind's bg-blue-600 */
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem; /* Tailwind's rounded-lg */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: background-color 0.2s;
+}
+
+.wallet-button:hover {
+    background-color: #1e40af; /* Tailwind's hover:bg-blue-700 */
+}
+
+.hidden {
+    display: none;
+}
+
+
