@@ -30,14 +30,10 @@ contract Escrow {
         require(success, "Fail to  send funds");
     }
 
-    function lockEscrow() public {
-        escrowLocked = true;
-    }
-
     function deductBalance(uint256 amount) public {
         require(amount <= address(this).balance, "Deduction amount exceeds escrow balance");
         require(
-            escrowLocked == true || disputeActive == true,
+            escrowLocked == false || disputeActive == false,
             "The deposit is locked due to  a dispute that is still on going"
         );
 
@@ -49,6 +45,10 @@ contract Escrow {
 
     function addEscrowBalance(address _tenant, uint256 deposit) public payable {
         require(_tenant == tenant, "Only tenant can replenish deposit");
+        require(
+            escrowLocked == false || disputeActive == false,
+            "The deposit is locked due to  a dispute that is still on going no transaction can be done "
+        );
 
         escrowAmount += deposit;
     }
