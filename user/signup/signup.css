@@ -1,0 +1,79 @@
+/* General Styling */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f3f4f6;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.card {
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+}
+
+.card-header, .card-footer {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.card-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Form Styling */
+.input, .select, .button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.button {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+.button:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+}
+
+/* Alert Box Styling */
+.alert {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+/* Footer Styling */
+.footer-text {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.link-button {
+    background: none;
+    border: none;
+    color: #3b82f6;
+    cursor: pointer;
+}

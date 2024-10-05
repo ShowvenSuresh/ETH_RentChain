@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dispute Management System</title>
+    <link rel="stylesheet" href="disputes-style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Dispute List -->
+    <div class="view-list">
+      <div class="header">
+        <h2>Active Disputes</h2>
+        <button class="button">Raise New Dispute</button>
+      </div>
+
+      <!-- Card for each dispute -->
+      <div class="card">
+        <div class="card-content">
+          <div class="flex-between">
+            <div>
+              <h3>Property Damage</h3>
+              <p class="description">Broken window in living room</p>
+            </div>
+            <span class="status-badge pending">PENDING</span>
+          </div>
+          <div class="details">
+            <div class="icon-text">
+              <span class="icon">&#128339;</span> 2024-03-15
+            </div>
+            <div class="icon-text">
+              <span class="icon">&#128172;</span> 0 messages
+            </div>
+            <div class="icon-text">
+              <span class="icon">&#128228;</span> 0 evidence
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Create Dispute Form -->
+    <div class="view-create">
+      <h2>Raise New Dispute</h2>
+      <div class="alert">
+        <span class="alert-icon">&#9888;</span>
+        <div>
+          <strong>Important:</strong> Please provide accurate information and any relevant evidence to help resolve the dispute quickly.
+        </div>
+      </div>
+      <form class="form">
+        <div class="form-group">
+          <label for="category">Category</label>
+          <select id="category">
+            <option>Select dispute category</option>
+            <option value="PROPERTY_DAMAGE">Property Damage</option>
+            <option value="LATE_PAYMENT">Late Payment</option>
+            <option value="MAINTENANCE">Maintenance</option>
+            <option value="NOISE_COMPLAINT">Noise Complaint</option>
+            <option value="UNAUTHORIZED_MODIFICATION">Unauthorized Modification</option>
+          </select>
+        </div>
+    <div class="description-group">
+      <label for="description">Description</label>
+      <textarea id="description" class="description-field" rows="5" placeholder="Describe the issue in detail..."></textarea>
+    </div>       
+        <div class="form-group">
+          <label for="urgency">Urgency Level</label>
+          <select id="urgency">
+            <option>Select urgency level</option>
+            <option value="LOW">Low</option>
+            <option value="MEDIUM">Medium</option>
+            <option value="HIGH">High</option>
+            <option value="CRITICAL">Critical</option>
+          </select>
+        </div>
+        <div class="file-upload">
+          <span class="icon">&#128228;</span>
+          <p>Drop files here or click to upload evidence</p>
+          <p>Support for images, PDFs, and documents up to 5MB</p>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="button">Submit Dispute</button>
+          <button type="button" class="button outline">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

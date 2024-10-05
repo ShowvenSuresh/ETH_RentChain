@@ -1,0 +1,120 @@
+/* Global Styles */
+:root {
+    --primary-color: #007bff;
+    --primary-color-hover: #0056b3;
+    --background-color: #f7f7f7;
+    --card-background: #ffffff;
+    --text-color: #333333;
+    --border-color: #cccccc;
+    --border-radius: 8px;
+    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --spacing-unit: 20px;
+    --font-family: Arial, sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: var(--spacing-unit);
+    line-height: 1.6;
+}
+
+/* Layout */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-unit);
+}
+
+.card {
+    background: var(--card-background);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: var(--spacing-unit);
+    margin-bottom: var(--spacing-unit);
+}
+
+.card-header {
+    margin-bottom: var(--spacing-unit);
+}
+
+.card-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 0 calc(var(--spacing-unit) / 2);
+}
+
+/* Form Styles */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-unit);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-unit);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+input,
+select,
+textarea {
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: calc(var(--border-radius) / 2);
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.submit-button {
+    padding: 12px 20px;
+    background-color: var(--primary-color);
+    color: var(--card-background);
+    border: none;
+    border-radius: calc(var(--border-radius) / 2);
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: var(--primary-color-hover);
+}
+
+/* Responsive Design */
+@media (min-width: 600px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+    body {
+        padding: calc(var(--spacing-unit) * 2);
+    }
+    
+    .card {
+        padding: calc(var(--spacing-unit) * 1.5);
+    }
+}
